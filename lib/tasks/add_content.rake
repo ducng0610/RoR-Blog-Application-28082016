@@ -9,6 +9,7 @@ namespace :duc4nh do
       a.user = User.first
       a.save
       (1..(rand(10) + 10)).each do |_c|
+        puts '*'
         b = Comment.new
         b.message = random_str(100)
         b.user = User.first
