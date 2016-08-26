@@ -13,11 +13,12 @@ Rails.application.routes.draw do
     collection do
       get '/', to: 'blog#index'
       get '/new', to: 'blog#new'
-      get '/edit', to: 'blog#edit'
+      get '/:id/edit', to: 'blog#edit'
       get '/:id/detail', to: 'blog#detail'
       post '/create', to: 'blog#create'
-      post '/update', to: 'blog#update'
-      post '/destroy', to: 'blog#destroy'
+      post '/:id/update', to: 'blog#update'
+      post '/:id/destroy', to: 'blog#destroy'
+      post '/:id/add_comment', to: 'blog#add_comment'
     end
   end
 end

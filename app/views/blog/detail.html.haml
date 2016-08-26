@@ -1,1 +1,37 @@
-detail.html.haml
+.container
+  .row
+    .panel.panel-default
+      .panel-heading
+        .row
+          .col-sm-8
+            Read blog
+      .panel-body
+        = render partial: 'partials/flash_message'
+        .col-sm-10.col-sm-offset-1
+          .row
+            %h1= @blog.title
+            %h4= "Author: #{@blog.user.email}"
+          .row
+            %p= @blog.content
+          .row
+            %h4 Comments:
+            %ul
+              - @blog.comments.each do |comment|
+                %li
+                  %i= "[#{comment.created_at.strftime('%d-%m-%Y')}] #{comment.user.email}: #{comment.message}"
+.container
+  %form.instructor-detail-form{:method => 'post', 'data-toggle' => 'validator', :role => "form", :action => '/blog/' + @blog.id.to_s + '/add_comment'}
+    .row
+      .panel.panel-default
+        .panel-heading
+          .row
+            .col-sm-12
+              %input.btn.btn-primary.btn-sm{:type => 'submit', :value => 'Post'}
+        .panel-body
+          .row
+            .col-sm-12
+              .form-group
+                .input-group
+                  %span.input-group-addon
+                    %span Add your comment
+                  %textarea.form-control{:rows => 4, :type => 'text', :name => 'message'}

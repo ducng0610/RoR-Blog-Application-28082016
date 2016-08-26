@@ -1,1 +1,20 @@
-index.html.haml
+.container
+  .row
+    .panel.panel-default
+      .panel-heading
+        .row
+          .col-sm-8
+            10 most recent posts
+      .panel-body
+        .row
+          = render partial: 'blogs_table', locals: { blogs: @recent_blogs }
+.container
+  .row
+    .panel.panel-default
+      .panel-heading
+        .row
+          .col-sm-8
+            10 most commented posts
+      .panel-body
+        .row
+          = render partial: 'blogs_table', locals: { blogs: @most_commented_blogs }

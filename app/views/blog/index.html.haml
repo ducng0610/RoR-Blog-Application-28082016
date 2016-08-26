@@ -1,0 +1,29 @@
+.container
+  .row
+    .panel.panel-default
+      .panel-heading
+        .row
+          .col-sm-8
+            Your blogs
+      .panel-body
+        .row
+          .center
+            = will_paginate @blogs
+          .panel-body.table-responsive.nowrap  
+            %table.table.table-hover.table-bordered
+              %thead
+                - ['Title', 'Created at', 'Last edited', 'More'].each do |header|
+                  %th.center= header
+              %tbody
+                - @blogs.each do |blog|
+                  %tr
+                    %td= blog.title
+                    %td= blog.created_at.strftime('%d-%m-%Y')
+                    %td= blog.updated_at.strftime('%d-%m-%Y')
+                    %td.center
+                      %a{:href => '/blog/' + blog.id.to_s + '/detail'}
+                        %span.glyphicon.glyphicon-edit
+                      %a{:href => '/blog/' + blog.id.to_s + '/edit'}
+                        %span.glyphicon.glyphicon-pencil
+          .center
+            = will_paginate @blogs

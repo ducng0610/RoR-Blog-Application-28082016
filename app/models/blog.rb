@@ -3,7 +3,7 @@ class Blog
   include Mongoid::Timestamps
 
   field :title, default: 'Untitled'
-  field :content
+  field :content, default: 'Please add some content'
 
   belongs_to :user
   has_many :comments

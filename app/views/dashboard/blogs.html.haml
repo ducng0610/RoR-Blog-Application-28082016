@@ -4,24 +4,11 @@
       .panel-heading
         .row
           .col-sm-8
-            There are #{@blogs.count} records
+            All blogs available
       .panel-body
         .row
           .center
             = will_paginate @blogs
-          .panel-body.table-responsive.nowrap  
-            %table.table.table-hover.table-bordered
-              %thead
-                - ['Title', 'Author', 'Last edited', 'Read more'].each do |header|
-                  %th= header
-              %tbody
-                - @blogs.each do |blog|
-                  %tr
-                    %td= blog.title
-                    %td= blog.user.email
-                    %td= blog.updated_at.strftime('%d-%m-%Y')
-                    %td.center
-                      %a{:href => '/blog/' + blog.id.to_s + '/detail'}
-                        %span.glyphicon.glyphicon-edit
+          = render partial: 'blogs_table', locals: { blogs: @blogs }
           .center
             = will_paginate @blogs

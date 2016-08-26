@@ -9,3 +9,5 @@
 * Ruby Convention Checker: Rubocop
 
 * Client Frameworks: Jquery, Bootstrap,..
+
+* Fake content: type 'rake duc4nh:add_content'

@@ -8,7 +8,7 @@ namespace :duc4nh do
       a.title = random_str(50)
       a.user = User.first
       a.save
-      (1..10).each do |c|
+      (1..(rand(10) + 10)).each do |c|
         b = Comment.new
         b.message = random_str(100)
         b.user = User.first

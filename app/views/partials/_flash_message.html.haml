@@ -1,0 +1,9 @@
+- flash.each do |key, message|
+  .alert{:class => "alert-#{key}"}
+    %ul
+      - if message.is_a? Array
+        - message.each do |msg|
+          %li= msg
+      - else
+        %li= message
+  - flash.delete(key)

@@ -1,1 +1,26 @@
-new.html.haml
+.container
+  %form{:method => 'post', 'data-toggle' => 'validator', :role => "form", :action => '/blog/create'}
+    = hidden_field_tag :authenticity_token, form_authenticity_token
+    .row
+      .panel.panel-default
+        .panel-heading
+          .row
+            .col-sm-8
+              Update
+            .col-sm-4.right
+              %input.btn.btn-primary.btn-sm{:type => 'submit', :value => 'Update'}
+        .panel-body
+          .row
+            .col-sm-12
+              .form-group
+                .input-group
+                  %span.input-group-addon
+                    %span Title
+                  %input.form-control{:type => 'text', :name => 'blog[title]'}
+          .row
+            .col-sm-12
+              .form-group
+                .input-group
+                  %span.input-group-addon
+                    %span Content
+                  %textarea.form-control{:rows => 20, :type => 'text', :name => 'blog[message]'}
