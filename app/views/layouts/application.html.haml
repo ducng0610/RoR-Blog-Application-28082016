@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Duc4nh
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag 'favicon.png'
+  %body
+    %header{:style => "width: 100%; position: fixed; z-index: 99999;"}
+      = render partial: 'layouts/header'
+    .body{:style => "position: absolute; width: 100%; top: 70px;"}
+      = yield
+    %footer
+      = render partial: 'layouts/footer'
+    

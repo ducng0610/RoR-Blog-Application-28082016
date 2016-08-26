@@ -1,0 +1,37 @@
+= content_for :left_nav_actions do
+  - if current_user
+    %li
+      %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", :href => '/', :role => "button"} Dashboard
+    %li
+      %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", :href => '/blogs', :role => "button"} Read blogs
+    %li.dropdown
+      %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} 
+        My Blog
+        %span.caret
+      %ul.dropdown-menu
+        %li
+          %a{:href => "/blog"} Manage my blog
+        %li.divider{:role => "separator"}
+        %li
+          %a{:href => "/blog/new"} New blog
+    %li
+      %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", :href => '#', :role => "button"} Admin
+
+%nav.navbar.navbar-static-top.navbar-default
+  .container-fluid
+    .navbar-header
+      %a.navbar-brand{:href => main_app.root_path}
+        %i.glyphicon.glyphicon-fire{:style => 'color: white;'}
+        %span Duc4nh
+    .navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        = yield :left_nav_actions
+      %ul.nav.navbar-nav.navbar-right
+        - if current_user
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              = current_user.email
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                %a{href: root_url + 'users/sign_out', 'data-method' => 'delete', :rel => 'nofollow'} Log Out
