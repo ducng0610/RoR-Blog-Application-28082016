@@ -1,3 +1,16 @@
+production:
+  clients:
+    default:
+      database: duc4nh
+      hosts:
+        - ds147985.mlab.com:47985
+      options:
+        user: duc4nh
+        password: 12345678
+        roles:
+          - 'dbOwner'
+        max_pool_size: 20
+        min_pool_size: 2
 development:
   # Configure available database clients. (required)
   clients:
