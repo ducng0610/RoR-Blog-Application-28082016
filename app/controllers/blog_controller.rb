@@ -60,7 +60,7 @@ class BlogController < ApplicationController
     )
 
     if !comment.save
-      flash[:danger] ='Sorry, something went wrong: ' + comment.errors.full_messages.to_s
+      flash[:danger] = 'Sorry, something went wrong: ' + comment.errors.full_messages.to_s
     else
       flash[:success] = 'Comment added'
     end
