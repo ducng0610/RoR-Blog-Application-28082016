@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class BlogController < ApplicationController
   before_action :permit_blog_params, only: [:update, :create]
 
@@ -20,14 +21,14 @@ class BlogController < ApplicationController
     blog = Blog.new(@blog_params)
     blog.user = current_user
 
-    if !blog.save
+    unless blog.save
       flash[:danger] = 'Sorry, something went wrong: ' + blog.errors.full_messages.to_s
       redirect_to '/blog/new'
       return
     end
 
     flash[:success] = 'Successfully created'
-    redirect_to "/blog/#{blog.id.to_s}/detail"
+    redirect_to "/blog/#{blog.id}/detail"
   end
 
   # GET
@@ -38,15 +39,15 @@ class BlogController < ApplicationController
   # POST
   def update
     blog = Blog.where(id: params[:id]).first
-    
-    if !blog.update(@blog_params)
+
+    unless blog.update(@blog_params)
       flash[:danger] = 'Sorry, something went wrong: ' + blog.errors.full_messages.to_s
-      redirect_to "/blog/#{blog.id.to_s}/edit"
+      redirect_to "/blog/#{blog.id}/edit"
       return
     end
-    
+
     flash[:success] = 'Successfully updated'
-    redirect_to "/blog/#{blog.id.to_s}/detail"
+    redirect_to "/blog/#{blog.id}/detail"
   end
 
   # POST
@@ -65,7 +66,7 @@ class BlogController < ApplicationController
       flash[:success] = 'Comment added'
     end
 
-    redirect_to "/blog/#{blog.id.to_s}/detail"
+    redirect_to "/blog/#{blog.id}/detail"
   end
 
   private

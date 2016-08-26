@@ -1,5 +1,5 @@
+# frozen_string_literal: true
 source 'https://rubygems.org'
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -46,7 +46,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   #
-  gem "erb2haml"
+  gem 'erb2haml'
   # Debugger
   gem 'pry-rails'
   # Convention

@@ -1,10 +1,11 @@
+# frozen_string_literal: true
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
 
   root 'dashboard#index'
-  
+
   resources :dashboard, only: %w(), path: '/dashboard' do
     collection do
       get '/blogs', to: 'dashboard#blogs'
