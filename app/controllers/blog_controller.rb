@@ -1,10 +1,16 @@
 class BlogController < ApplicationController
   # GET
   def index
+    @blogs = current_user.blogs.paginate(page: params[:page], per_page: 10)
   end
 
   # GET
   def new
+  end
+
+  # GET
+  def detail
+    @blog = Blog.where(id: params[:id]).first
   end
 
   # POST

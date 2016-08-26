@@ -3,20 +3,21 @@ Rails.application.routes.draw do
 
   root 'dashboard#index'
   
+  resources :dashboard, only: %w(), path: '/dashboard' do
+    collection do
+      get '/blogs', to: 'dashboard#blogs'
+    end
+  end
+
   resources :blog, only: %w(), path: '/blog' do
     collection do
       get '/', to: 'blog#index'
       get '/new', to: 'blog#new'
       get '/edit', to: 'blog#edit'
+      get '/:id/detail', to: 'blog#detail'
       post '/create', to: 'blog#create'
       post '/update', to: 'blog#update'
       post '/destroy', to: 'blog#destroy'
-    end
-  end
-
-  resources :admin, only: %w(), path: '/admin' do
-    collection do
-      # get '/', to: 'transaction_api#handle_transaction'
     end
   end
 end
