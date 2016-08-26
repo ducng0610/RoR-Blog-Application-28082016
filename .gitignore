@@ -9,9 +9,16 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-/tmp/*
 !/log/.keep
-!/tmp/.keep
-
-# Ignore Byebug command history file.
-.byebug_history
+/vendor/assets/bower_components/*
+/tmp
+./idea
+.idea/
+.DS_Store
+/public/*
+/vendor/assets/components/*
+/dump/
+/unuse_code/
+./docker-compose.yml
+Dockerfile.base
+./Dockerfile.test
