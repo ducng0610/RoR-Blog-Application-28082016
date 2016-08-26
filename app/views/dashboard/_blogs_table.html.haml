@@ -7,7 +7,7 @@
       - blogs.each do |blog|
         %tr
           %td= "#{blog.title} [Author: #{blog.user.email}]"
-          %td= blog.updated_at.strftime('%d-%m-%Y')
+          %td= blog.updated_at.strftime('%d-%m-%Y %H:%M:%S')
           %td.center
             %a{:href => '/blog/' + blog.id.to_s + '/detail'}
               %span.glyphicon.glyphicon-edit

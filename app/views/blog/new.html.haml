@@ -6,21 +6,22 @@
         .panel-heading
           .row
             .col-sm-8
-              Update
+              New blog
             .col-sm-4.right
-              %input.btn.btn-primary.btn-sm{:type => 'submit', :value => 'Update'}
+              %input.btn.btn-primary.btn-sm{:type => 'submit', :value => 'Create'}
         .panel-body
+          = render partial: 'partials/flash_message'
           .row
             .col-sm-12
               .form-group
                 .input-group
                   %span.input-group-addon
                     %span Title
-                  %input.form-control{:type => 'text', :name => 'blog[title]'}
+                  %input.form-control{:type => 'text', :placeholder => 'Add title', :name => 'blog[title]'}
           .row
             .col-sm-12
               .form-group
                 .input-group
                   %span.input-group-addon
                     %span Content
-                  %textarea.form-control{:rows => 20, :type => 'text', :name => 'blog[message]'}
+                  %textarea.form-control{:rows => 20, :type => 'text', :placeholder => 'Please add some content', :name => 'blog[message]'}

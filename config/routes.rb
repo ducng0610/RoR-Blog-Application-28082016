@@ -17,7 +17,6 @@ Rails.application.routes.draw do
       get '/:id/detail', to: 'blog#detail'
       post '/create', to: 'blog#create'
       post '/:id/update', to: 'blog#update'
-      post '/:id/destroy', to: 'blog#destroy'
       post '/:id/add_comment', to: 'blog#add_comment'
     end
   end

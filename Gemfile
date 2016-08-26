@@ -64,3 +64,5 @@ gem 'will_paginate'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-sass'
 gem 'autoprefixer-rails'
+# Admin
+gem 'activeadmin', '~> 1.0.0.pre4'

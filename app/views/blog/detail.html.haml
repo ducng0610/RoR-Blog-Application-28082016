@@ -18,9 +18,10 @@
             %ul
               - @blog.comments.each do |comment|
                 %li
-                  %i= "[#{comment.created_at.strftime('%d-%m-%Y')}] #{comment.user.email}: #{comment.message}"
+                  %i= "[#{comment.created_at.strftime('%d-%m-%Y %H:%M:%S')}] #{comment.user.email}: #{comment.message}"
 .container
   %form.instructor-detail-form{:method => 'post', 'data-toggle' => 'validator', :role => "form", :action => '/blog/' + @blog.id.to_s + '/add_comment'}
+    = hidden_field_tag :authenticity_token, form_authenticity_token
     .row
       .panel.panel-default
         .panel-heading

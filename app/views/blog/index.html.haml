@@ -6,6 +6,7 @@
           .col-sm-8
             Your blogs
       .panel-body
+        = render partial: 'partials/flash_message'
         .row
           .center
             = will_paginate @blogs
@@ -18,8 +19,8 @@
                 - @blogs.each do |blog|
                   %tr
                     %td= blog.title
-                    %td= blog.created_at.strftime('%d-%m-%Y')
-                    %td= blog.updated_at.strftime('%d-%m-%Y')
+                    %td= blog.created_at.strftime('%d-%m-%Y %H:%M:%S')
+                    %td= blog.updated_at.strftime('%d-%m-%Y %H:%M:%S')
                     %td.center
                       %a{:href => '/blog/' + blog.id.to_s + '/detail'}
                         %span.glyphicon.glyphicon-edit
