@@ -2,20 +2,21 @@
   - if current_user
     %li
       %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", :href => '/blog', :role => "button"} My blogs
-    %ul.dropdown-menu
-      %li
-        %a{:href => "/blog/manage"} Manage my blog
-      %li.divider{:role => "separator"}
-      %li
-        %a{:href => "/blog/new"} New blog
-    %li
-      %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", :href => '/', :role => "button"} Dashboard
-    %li
-      %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", :href => '/dashboard/blogs', :role => "button"} Read blogs
     %li.dropdown
       %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} 
-        My Blog
+        Manage my blog
         %span.caret
+      %ul.dropdown-menu
+        %li
+          %a{:href => "/blog/manage"} Manage my blog
+        %li.divider{:role => "separator"}
+        %li
+          %a{:href => "/blog/new"} New blog
+    %li
+      %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", :href => '/dashboard', :role => "button"} Dashboard
+    %li
+      %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", :href => '/dashboard/blogs', :role => "button"} Read blogs
+    
 
 %nav.navbar.navbar-static-top.navbar-default
   .container-fluid

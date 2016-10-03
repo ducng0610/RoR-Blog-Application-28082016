@@ -1,10 +1,12 @@
 # frozen_string_literal: true
+require 'will_paginate/array'
+
 class BlogController < ApplicationController
   before_action :permit_blog_params, only: [:update, :create]
 
   # GET
   def index
-    @blogs = current_user.blogs.paginate(page: params[:page], per_page: 10)
+    @blogs = current_user.blogs
   end
 
   # GET

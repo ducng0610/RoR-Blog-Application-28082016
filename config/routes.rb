@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: %w(), path: '/dashboard' do
     collection do
+      get '/', to: 'dashboard#index'
       get '/blogs', to: 'dashboard#blogs'
     end
   end
