@@ -5,13 +5,13 @@
 > - remove the `README.rdoc` file that Rails generates. 
 > - remove all the HINT blocks in this file.
 
-**Name of your app** is a Ruby on Rails blog application.
+**Duc4nh** is a Ruby on Rails blog application.
 
-Submitted by: **Your Name Here**
+Submitted by: **Duc Anh Nguyen**
 
-Time spent: **X** hours spent in total
+Time spent: **10** hours spent in total
 
-URL: **Insert your Heroku URL here**
+URL: **[https://still-fjord-20498.herokuapp.com/]**
 
 ## User Stories
 
@@ -46,7 +46,7 @@ Here's a walkthrough of implemented user stories:
 > `![Video Walkthrough](walkthrough.gif)` 
 > 
 
-![Video Walkthrough](/path/to/your/gif/file)
+![Video Walkthrough](walkthrough.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
