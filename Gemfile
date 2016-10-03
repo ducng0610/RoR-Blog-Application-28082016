@@ -67,3 +67,5 @@ gem 'autoprefixer-rails'
 # Admin
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+gem 'rails_12factor', group: 'production'

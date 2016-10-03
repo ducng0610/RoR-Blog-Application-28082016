@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
 
-  root 'dashboard#index'
+  root 'blog#index'
 
   resources :dashboard, only: %w(), path: '/dashboard' do
     collection do
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :blog, only: %w(), path: '/blog' do
     collection do
       get '/', to: 'blog#index'
+      get '/manage', to: 'blog#manage'
       get '/new', to: 'blog#new'
       get '/:id/edit', to: 'blog#edit'
       get '/:id/detail', to: 'blog#detail'

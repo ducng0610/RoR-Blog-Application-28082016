@@ -4,6 +4,12 @@
       .panel-heading
         %h2 Log in
       .panel-body
+        %p
+          %i 
+            Note: You can try out the app with account 
+            %b test@test.com
+            , password 
+            %b 12345678
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .field
             = f.label :email

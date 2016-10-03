@@ -1,6 +1,14 @@
 = content_for :left_nav_actions do
   - if current_user
     %li
+      %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", :href => '/blog', :role => "button"} My blogs
+    %ul.dropdown-menu
+      %li
+        %a{:href => "/blog/manage"} Manage my blog
+      %li.divider{:role => "separator"}
+      %li
+        %a{:href => "/blog/new"} New blog
+    %li
       %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", :href => '/', :role => "button"} Dashboard
     %li
       %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", :href => '/dashboard/blogs', :role => "button"} Read blogs
@@ -8,19 +16,13 @@
       %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} 
         My Blog
         %span.caret
-      %ul.dropdown-menu
-        %li
-          %a{:href => "/blog"} Manage my blog
-        %li.divider{:role => "separator"}
-        %li
-          %a{:href => "/blog/new"} New blog
 
 %nav.navbar.navbar-static-top.navbar-default
   .container-fluid
     .navbar-header
       %a.navbar-brand{:href => main_app.root_path}
         %i.glyphicon.glyphicon-fire{:style => 'color: white;'}
-        %span Duc4nh
+        %span Blog for CoderSchool
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
         = yield :left_nav_actions

@@ -8,6 +8,11 @@ class BlogController < ApplicationController
   end
 
   # GET
+  def manage
+    @blogs = current_user.blogs.paginate(page: params[:page], per_page: 10)
+  end
+
+  # GET
   def new
   end
 

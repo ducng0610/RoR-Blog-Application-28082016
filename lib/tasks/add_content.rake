@@ -6,7 +6,7 @@ namespace :duc4nh do
       a = Blog.new
       a.content = random_str(1000)
       a.title = random_str(50)
-      a.user = User.first
+      a.user = User.where(email: 'test@test.com').first
       a.save
       (1..(rand(10) + 10)).each do |_c|
         puts '*'
