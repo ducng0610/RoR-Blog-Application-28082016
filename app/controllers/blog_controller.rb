@@ -6,12 +6,12 @@ class BlogController < ApplicationController
 
   # GET
   def index
-    @blogs = current_user.blogs
+    @blogs = current_user.blogs.includes(:comments)
   end
 
   # GET
   def manage
-    @blogs = current_user.blogs.paginate(page: params[:page], per_page: 10)
+    @blogs = current_user.blogs.includes(:comments).paginate(page: params[:page], per_page: 10)
   end
 
   # GET
